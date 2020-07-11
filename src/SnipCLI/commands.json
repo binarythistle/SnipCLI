@@ -1,0 +1,12 @@
+[
+    {
+        "HowTo": "Build dotnet code",
+        "Platform": "dotnet core",
+        "CommandLine": "dotnet build"
+    },
+    {
+        "HowTo": "Run dotnet code",
+        "Platform": "dotnet core",
+        "CommandLine": "dotnet run"
+    }
+]

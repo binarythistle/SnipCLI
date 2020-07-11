@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using SnipCLI.Models;
+using System.Linq;
+
 
 namespace SnipCLI
 {
@@ -6,7 +10,20 @@ namespace SnipCLI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            List<SnipConfig> config = SnipConfig.ReadJsonFromFile("commands.json");
+
+
+            var results = Searcher.ReturnCommands(config, args);
+            
+
+
+
+            foreach(SnipConfig snip in results)
+            {
+                Console.WriteLine($"{snip.HowTo} - {snip.Platform} - [{snip.CommandLine}]");
+            }            
+            
         }
     }
 }
